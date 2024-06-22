@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from '../../api'
+import "./Users.scss"
 
 const Users = () => {
     const [usersData, setUsersData] = useState(null)
@@ -10,16 +11,24 @@ const Users = () => {
     }, [])
     console.log(usersData);
     return (
-        <section className='container mb-16'>
-            <h2 className='text-colorWhite mt-10 text-3xl'>Users</h2>
-            <div className='flex flex-wrap gap-14 mt-5'>
-                {usersData?.map(user => (
-                    <div className='max-w-[128px] '>
-                        <div className='bg-colorWhite w-32 h-32 rounded flex items-center justify-center'>128x128</div>
-                        <h3 className='text-colorWhite text-center break-all text-[17px]'>{user.FirstName} {user.LastName}</h3>
-
-                    </div>
-                ))}
+        <section>
+            <h2 className=''>Users</h2>
+            <div className='user'>
+                <table id="customers">
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                    {usersData?.map(user => (
+                        <tr>
+                                <td>{user.ID}</td>
+                                <td>{user.FirstName}</td>
+                                <td>{user.LastName}</td>
+                            </tr>
+                    ))}
+                        
+                    </table>
             </div>
         </section>
     )

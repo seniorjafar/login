@@ -34,10 +34,16 @@ const SignInForm = () => {
             <form className='sign_modal' onSubmit={handleSignin}>
                 <div className='sign_modalClose'>
                     <h2 className='sign_text'>Sign In</h2>
-                    <input required onChange={handleChange} value={formData.UserName} name='UserName' className='' type="text" placeholder='Username' />
-                    <input required onChange={handleChange} value={formData.password} name='password' className='' type="password" placeholder='Password' />
-                    <button className=''>Next</button>
-                    <button className=''>Forgot password?</button>
+                    <div className='sign_input'>
+                        <input required onChange={handleChange} value={formData.UserName} name='UserName'  type="text" placeholder='Username' />
+                    </div>
+                    <div className='sign_input'>
+                        <input required onChange={handleChange} value={formData.password} name='password' type="password" placeholder='Password' />
+                    </div>
+                    <div className='btns'>
+                        <button className='btn'>Next</button>
+                    <button className='btn'>Forgot password?</button>
+                    </div>
                     <p className=''>Don't have an account? <Link className='' to={'/'}>Sign up</Link></p>
 
                 </div>
